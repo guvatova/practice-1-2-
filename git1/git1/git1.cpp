@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include <iostream>
 #include <stdlib.h>
+#include <stdio.h> 
+#include <time.h> 
 
 using namespace std;
 
@@ -34,6 +36,9 @@ int main()
 	int size;
 	cout << "¬ведите размер массива: ";
 	cin >> size;
+
+	clock_t start = clock();
+	getchar();
 	int *ar = new int[size];
 	for (int i = 0; i < size; i++)
 	{
@@ -46,6 +51,9 @@ int main()
 	{
 		cout << ar[i] << "\t";
 	}
+	clock_t end = clock();
+	double seconds = (double)(end - start) / CLOCKS_PER_SEC;
+	printf("\nThe time: %f seconds\n", seconds);
 	system("pause");
 	return 0;
 
